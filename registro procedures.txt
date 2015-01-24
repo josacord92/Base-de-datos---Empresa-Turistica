@@ -1,0 +1,58 @@
+Lista de Store Procedures - Proyecto
+
+Mantenimiento (consulta, ingreso, actualizacion ) de personal(vendedores, secrearia, gerente, conserjes)	
+
+SP_obtener_EmpleadoxCarne -(carne)
+SP_obtener_EmpleadoxTipoPuesto -(TipoPuesto)
+SP_insertar_Empleado(pNombreSucursal,pNombre,pCarne,pNombreTipoPuesto,pAdministradorFlag)
+SP_actualizar_EmpleadoxCarne - (carne,TipoPuesto)
+SP_borrar_EmpleadoxCarne(carne)
+
+
+
+Mantenimiento de paquetes (consultas, actualizacion, ingreso)	
+
+SP_obtener_PaquetexSucursalxEmpresa(pNombre) === apartir de este se validado con empresa
+SP_obtener_PaquetesALLxSucursalxEmpresa **revisar
+SP_insertar_Paquete(pNombreSucursal,pCantidadDisponible,pFechaTour,pPrecio,pCapacidadPersonas,pNombre);
+SP_actualizar_PaquetexSucursalxEmpresa(pNombre)
+
+
+Mantenimiento de sucursales	
+SP_obtener_sucursalDirxEmpresa(pNombreEmpresa) *** aun puedo hacer obtener por telefonos
+SP_actualizar_SucursalxEmpresa(pNombreEmpresa,pNombreSucursal,pNuevoNombre)
+
+
+Comprar paquete   - Vlidar el pago de almenos un 10% del precio
+
+SP_Comprar_Paquete   *** REVISAR(comprobado que sirve)  - se registra pago
+
+Abonar pagos a una venta
+SP_Abonar_Pago 
+
+
+
+Mantenimiento de clientes
+
+SP_obtener_ClientexCedula(cedlula)   - sin revisar
+SP_actualizar_ClientexCedula(cedula) - sin revisar
+SP_insertar_Cliente - revisar
+
+Obtencion de boleta con informacion
+
+Procedimiento  para obtener mejores vendedores
+SP_obtener_MejoresVendedoresxSucursal()
+
+Procedimiento  para obtener ganancias netas
+SP_obtener_GananciasNetasxSucursal()
+SP_obtener_GananciasNetasxFecha()
+SP_obtener_GananciasNetasxPaquete()
+
+Procedimiento para hacer pago de comisiones 
+SP_pago_ComisionesxEmpleado()
+
+
+Procedimiento para obtener pago de comisioens 
+SP_obtener_ComisionesxSucursal()
+SP_obtener_ComisionesxVendedor()
+SP_obtener_ComisioensxFecha()
