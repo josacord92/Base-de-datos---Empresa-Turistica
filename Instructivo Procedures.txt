@@ -1,0 +1,69 @@
+Mantenimiento(consulta,ingreso,actualizacion) de personal (vendedores,secretaria,gerente,conserjes)
+
+SP_obtener_EmpleadoxCarne(IN pCarne VARCHAR(50)) - BIEN
+SP_obtener_EmpleadoxTipoPuesto (IN pTipoPuesto VARCHAR(50)) - BIEN
+SP_insertar_Empleado(IN pNombreSucursal VARCHAR(50),IN pNombre VARCHAR(50),IN pCarne VARCHAR(50),IN pNombreTipoPuesto VARCHAR(50),IN pAdministradorFlag INT) - BIEN
+SP_actualizar_EmpleadoxCarne(IN pCarne VARCHAR(50),IN pNombreNuevoPuesto VARCHAR (50)) - BIEN
+SP_borrar_EmpleadoxCarne (IN pCarne VARCHAR(50)) - BIEN
+
+Mantenimiento de paquetes (consultas, actualizacion, ingreso)
+
+SP_obtener_PaquetexSucursalxEmpresa (IN pNombrePaquete VARCHAR(50), IN pNombreSucursal VARCHAR(50), IN pNombreEmpresa VARCHAR(50)) - BIEN
+SP_obtener_PaquetesALLxSucursalxEmpresa(IN pNombreSucursal VARCHAR(50),IN pNombreEmpresa VARCHAR(50)) - BIEN
+SP_insertar_Paquete(IN pNombreEmpresa VARCHAR(50),IN pNombreSucursal VARCHAR(50), - BIEN
+IN pCantidadDisponible INT,IN pFechaTour DATE,IN pPrecio Decimal(65,2),
+IN pCapacidadPersonas int,IN pNombrePaquete Varchar(50))
+
+SP_actualizar_PaquetexSucursalxEmpresa(IN pNombrePaquete VARCHAR(50), - BIEN
+IN pNombreSucursal VARCHAR(50), IN pNombreEmpresa VARCHAR(50),
+IN pNuevaFecha date,IN pNuevoPrecio decimal(65,2))
+
+Mantenimiento itinerario por paquete - Se realiza internamente en el llenado
+
+Mantenimiento sucursales
+SP_obtener_SucursalDirxEmpresa(IN pNombreEmpresa VARCHAR(50)) - BIEN
+SP_actualizar_SucursalxEmpresa(IN pNombreEmpresa VARCHAR(50),IN pNombreSucursal VARCHAR(50), IN pNuevoNombre VARCHAR(50)) - BIEN
+
+Comprar paquete
+SP_comprar_Paquete (IN pNombreEmpresa VARCHAR(50),  - BIEN
+IN pNombreSucursal VARCHAR(50), IN pNombrePaquete VARCHAR(50), IN pCarneEmpleado VARCHAR(50),
+IN pCedulaCliente VARCHAR(50), IN pMedioPago VARCHAR(50), IN pPago DECIMAL(65,2))
+
+Vlidar el pago de almenos un 10% del precio - BIEN VA EN EL SP ANTERIOR 
+
+Abonar pagos a un paquete
+SP_abonar_Pago(IN pCedulaCliente VARCHAR(50),IN pMontoPago DECIMAL(65,2),IN pNumeroVenta INT) - BIEN
+
+Mantenimiento de clientes
+SP_obtener_ClientexCedula(IN pCedula VARCHAR(50)) - BIEN
+SP_actualizar_ClientexCedula(IN pNuevoNombre Varchar(50),IN pCedula Varchar(50)) - BIEN
+SP_insertar_Cliente(IN pNombre Varchar(50), IN pCedula varchar(50)) - BIEN
+
+Procedimiento  para obtener paquetes mas vendidos(utilizar sucursal, fechas y paquetes como parametros opcionales)
+SP_obtener_PaqueteMasVendidoxSucursal() - BIEN
+SP_obtener_PaqueteMasVendidoxFecha() - BIEN
+SP_obtener_PaqueteMasVendidoxPaquete() - BIEN
+
+Procedimiento  para obtener clientes mas frecuentes(utilizar sucursal, fechas y paquetes como parametros opcionales)
+SP_obtener_ClienteMasFrecuentexSucursal() - BIEN
+SP_obtener_ClienteMasFrecuentexFecha() - BIEN
+SP_obtener_ClienteMasFrecuentexPaquete() - BIEN
+	
+Procedimiento  para obtener mejores vendedores (utilizar sucursal, fechas y paquetes como parametros opcionales)	
+SP_obtener_MejoresVendedoresxSucursal() - BIEN
+SP_obtener_MejoresVendedoresxFecha() -BIEN
+SP_obtener_MejoresVendedoresxPaquete() - BIEN
+
+Procedimiento  para obtener ganancias netas (utilizar sucursal, fechas y paquetes como parametros opcionales)
+
+SP_obtener_GananciasNetasxSucursal() - BIEN
+SP_obtener_GananciasNetasxFecha() - BIEN
+SP_obtener_GananciasNetasxPaquete() - BIEN
+
+Procedimiento para hacer pago de comisiones	
+SP_pago_ComisionesxEmpleado() -BIEN
+
+Procedimiento para obtener pago de comisiones (utilizar sucursal, vendedor, y fechas como parametros opcionales)
+SP_obtener_ComisionesxSucursal() - BIEN
+SP_obtener_ComisionesxVendedor() - BIEN
+SP_obtener_ComisioensxFecha() -BIEN
